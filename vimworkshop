@@ -226,3 +226,13 @@ create more specific searches
 	?{pattern} - Search backwards from the cursor
 	/^{pattern} - Search forward for things beggining with pattern
 	/{pattern}$ - Search forward 
+
+
+
+----------------
+TRICKY COOL ADVANCED THINGS
+
+-----------------
+Registers
+
+
