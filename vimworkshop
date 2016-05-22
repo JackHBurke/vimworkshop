@@ -537,7 +537,6 @@ Specialty Registers
 	+ - System clipboard (Super useful when copying /pasting to clipboard)
 	_ - The BLACKHOLE, register just sends whatever to oblivion.
 
-
 ---------------
 EXERCISE
 	
@@ -563,9 +562,6 @@ INCREMENTING AND DECREMENTING
 <C-x> decrements
 <C-a> Increments (Note: If you are using tmux and you have 'a' bound like a smart person
                   Than unfortunately you'll have to hit a twice.)
-
-----------------
-EXERCISE
 
 Increment this number: 0
 
