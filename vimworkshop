@@ -10,7 +10,7 @@ exprience with vim, but will be accessible to those with no experience
 If you have not used vim before, spend some time with the next couple of lessons
 
 If you have used vim, skip to the next section to follow along
-	* Move down there by holding j, hitting ^d, or hitting /COUNTS 
+	* Move down there by holding j, hitting ^d, or hitting /CHAINING
 
 If you are a vim guru, and are using this time to shame me, search through
 the file as you see fit to see if this will be any help for you.
@@ -93,10 +93,13 @@ Now we begin with a concept that will come up in the next chapters;
 Using a number to preform an action that many times
 
 --------------------------------------------------------------------
-							COUNTS
+							CHAINING
 
 Most every action in vim can be done multipe times by entering a number before
 the action. This becomes incredibly useful for repetitive tasks.
+
+Chaining can also be applied to commands, but we will see small examples
+of that later on.
 
 Look at the line number of this line. Type in this number then hit k to go
 to the top of the document. Hit the same number then j to come back down.
@@ -125,7 +128,7 @@ the bottom, so lets start there.
 	G - puts you at the bottom
 
 ***BEFORE YOU TEST THIS***
-***<-- look at this line number and type :(put line number jack) to get back
+***<-- look at this line number and type :<line number> to get back
 Now go to the top, bottom, and come back
 
 In order to traverse a document based on large jumps, 
@@ -172,7 +175,7 @@ DDelete tthe ffirst ccharacter oof eeach wword iin tthis ssentance
 
 Deletee thee lastt characterr off eachh wordd inn thiss sentancee
 
-***Remember how we used count before commands
+***Remember how we used a count before commands
 
 DDelete the ffirst character oof each oother word
 
@@ -272,33 +275,35 @@ MOVEMENT RECAP
 
 	gg - puts you at the top of a file, 
 	G - puts you at the bottom
+
 	hit ^f to go forward a page (^forward)
 	or  ^b to go backwards a page (^backward)
 	hit ^u to go up a half page (^up)
 	or ^d to go down a half page (^down)
+
 	:number - Will put your cursor onto the the line "number"
+
 	w - move to the start of the next word (word)
 	e - move to the end of the word (end)
 	b - move backwards to the start of the word (back)
 	ge - move backwards to the end of the word (go back end?)
+
 	( - move a sentance backward (based on periods)
 	) - move a sentace forward
 	{ - move a paragraph backward (based on empty lines)
 	} - move a paragraph forward
 	% - Find the matching bracket / paren
-	( - move a sentance backward (based on periods)
-	) - move a sentace forward
-	{ - move a paragraph backward (based on empty lines)
-	} - move a paragraph forward
-	% - Find the matching bracket / paren
+
     0 - move to the start of a line
 	_ or ^ - move to the first non blank character of a line
     $ - move to the end of the line
+
 	f{char} - find the next occurence of the character given, cursor on char
 	F{char} - find the previous occurence of the character given, cursor on char
 	t{char} - find the next occurence, cursor to the left of the char 
 	T{char} - find the previous occurence, cursor to the right of the char
 	;       - repeat to find the next character for these commands
+
 	/{pattern} - Search forward from the cursor
 	?{pattern} - Search backwards from the cursor
 	/^{pattern} - Search forward for things beggining with pattern
@@ -308,6 +313,7 @@ MOVEMENT RECAP
 	*			- Search for the word that you have highlighted
 		n           - go to next element found by pattern
 		N			- go to previous element found by pattern
+
 	^o - Go to previous line that you have been to
 	^i - Go to the next line that you have been to
 
@@ -348,7 +354,7 @@ DELETION
 
 Delete everything after <here> because this text isnt really all that good
 Delete everthing before <here> because it sucked too
-Just delete this line
+Delete just this line
 Just delete these next 4 lines
 remember
 using numbers
@@ -382,22 +388,23 @@ What's that even mean? I only know the words:
 	yy - yank line
 	dy - yank word
 
----------------
-You know you can chain motions, right? Try that with yank (It's similar to chaining motions with d!)
+Try chainin motions with yank (It's similar to chaining motions with d!)
 
 Here is a sentence that you can mess around with
 
+Try yanking just a word in this sentance.
 
 ---------------
 VISUAL MODE
+
+Visual mode is similar to normal mode, you can move around your text without
+modifying it. This mode however, selects the text from where you entered 
+visual mode, to where you put your cursor, similar to dragging your mouse.
 
 	v (then your normal movement commands) select lines / letters/ words / etc. 
  			- You can do all the nice gestures you've learned in visual mode!
 	<Shift-V> - Select lines
 	<^v>      - Select collumns
-
----------------
-EXERCISE
 
 - Use line select on this thing:
 
@@ -454,6 +461,7 @@ MODIFICATION RECAP
 	I - Insert at the front of a line (after blank spaces) entering insert
 	o - Begin a new line below the cursor, enter insert mode
 	O - Begin a new line above the cursor, enter insert mode
+
 	x - delete the character under (and with numbers given, after the cursor)	
 	X - delete the character(s) before the cursor
 	d{movement} - delete the character in a movement
@@ -462,19 +470,24 @@ MODIFICATION RECAP
 		dw - Delete the next word
 	dd - delete the current line
 	D - delete from cursor to the end of the line	
+
 	r{char} - Replace the character under the cursor with the char you give it
 	R       - Insert mode for replacing characters
 	~       - Switch the case of the current character
+
 	y  - yank text
 	p  - place text
 	yy - yank line
 	dy - yank word
+
 	v (then your normal movement commands) select lines / letters/ words / etc. 
  			- You can do all the nice gestures you've learned in visual mode!
 	<Shift-V> - Select lines
 	<^v>      - Select collumns
+
 	>> - Shift a line one tab to the right
 	<< - Shift a line one tab to the left
+	
 	u - Undo last action
 	r - Redo last undo
 
@@ -508,10 +521,15 @@ Change all occurences of line to spline
 
 ----------------
 REGISTERS
-    
-    Hit "<letter>yy to yank line to register <letter> 
+   
+Registers become useful for storing text or commands. Since it is based on 
+letters, you can have multiple registers that you are utilizing at once.
+Saving to registers is especially useful for saving and pasting from 
+your clipboard.
+
+    "<letter>yy to yank line to register <letter> 
 				(You can also use y, or select blocks of text, etc...)
-    Hit "<letter>p to yank to register <letter>
+    "<letter>p to yank to register <letter>
 
 ----------------
 Specialty Registers
@@ -533,9 +551,6 @@ Copy this line into another register
 (Now paste them around)
 
 What's in your system clipboard right now? Let's find out! (paste it below and share with your friends)
-
-
-...What other sick things can I do with registers though?
 
 ---------------
 MACROS
@@ -565,8 +580,9 @@ PLAYING BACK A RECORDING
 hit @<register> 
 (NOTE: You can repeat this macro, for instance, 50 times by hitting 50@<register>)
 
----------------
-EXERCISE
+	q<number> - begin recording commands into register <number>
+				hit q again to finish
+	@<number> - Execute the macro stored in register <number>
 
 Record a macro which:
     - Copies the current line 
@@ -585,11 +601,12 @@ To open up a new buffer type :bn
 To see your list of current buffers type :ls (NOTE: You can find a plugin which makes this functionality nicer..)
 To switch between buffers type :b<number of buffer>
 
-----------------
-EXERCISE
+	:bn - Open a new buffer
+	:ls - View all curent buffer
+	:b<number> - Switch to buffer <number>
 
-	1) Open a new buffer
-	2) :ls to see your new buffer
+Open a new buffer
+:ls to see your new buffer
 
 ---------------
 WINDOWS
@@ -613,9 +630,6 @@ NOTE: These require a magic touch. With one finger on control hit w, release con
 	<C-w-H>, <C-w-J>, <C-w-K>,<C-w-L> Move the windows around in the
 				direction you hit (Note that HJKL are caps'd)
 
----------------
-EXERCISE
-
 Make some windows! Use those buffers you made and place them around in nice ways. Open up a couple new files or
 whatnot. Tile it up dude!
 
@@ -624,11 +638,8 @@ whatnot. Tile it up dude!
 ---------------
 TABS
 
-:tabnew - Create a new tab
-gt and gT - Move back and forth between tabs
-
----------------
-EXERCISE
+	:tabnew - Create a new tab
+	gt and gT - Move back and forth between tabs
 
 Stylize your vim buffers! Make two tabs with different views!
 
