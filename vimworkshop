@@ -267,6 +267,50 @@ Go to the top of the file, then come right back
 
 Traverse to the top of this section, then come back down
 
+-----------------
+MOVEMENT RECAP
+
+	gg - puts you at the top of a file, 
+	G - puts you at the bottom
+	hit ^f to go forward a page (^forward)
+	or  ^b to go backwards a page (^backward)
+	hit ^u to go up a half page (^up)
+	or ^d to go down a half page (^down)
+	:number - Will put your cursor onto the the line "number"
+	w - move to the start of the next word (word)
+	e - move to the end of the word (end)
+	b - move backwards to the start of the word (back)
+	ge - move backwards to the end of the word (go back end?)
+	( - move a sentance backward (based on periods)
+	) - move a sentace forward
+	{ - move a paragraph backward (based on empty lines)
+	} - move a paragraph forward
+	% - Find the matching bracket / paren
+	( - move a sentance backward (based on periods)
+	) - move a sentace forward
+	{ - move a paragraph backward (based on empty lines)
+	} - move a paragraph forward
+	% - Find the matching bracket / paren
+    0 - move to the start of a line
+	_ or ^ - move to the first non blank character of a line
+    $ - move to the end of the line
+	f{char} - find the next occurence of the character given, cursor on char
+	F{char} - find the previous occurence of the character given, cursor on char
+	t{char} - find the next occurence, cursor to the left of the char 
+	T{char} - find the previous occurence, cursor to the right of the char
+	;       - repeat to find the next character for these commands
+	/{pattern} - Search forward from the cursor
+	?{pattern} - Search backwards from the cursor
+	/^{pattern} - Search forward for things beggining with pattern
+	?^{pattern} - Same but backwards
+	/{pattern}$ - Search forward for a pattern at the end of the line 
+	?{pattern}$ - Same but backwards
+	*			- Search for the word that you have highlighted
+		n           - go to next element found by pattern
+		N			- go to previous element found by pattern
+	^o - Go to previous line that you have been to
+	^i - Go to the next line that you have been to
+
 --------------------------------------------------------------------------
 								MODIFICATION
 
@@ -387,6 +431,52 @@ lines. This is done with >> or << for tabbing or untabbing respectively
 Tab this line
 		Untab these two lines
 		but use visual mode to select both
+
+---------------
+REDO
+
+While you probably have figured out how to undo, redo can be equally as helpful
+
+	u - Undo last action
+	^r - Redo last undo
+
+Delete this then bring it back
+
+Go to the top of the file, enter into visual mode,
+then go to the bottom of the file, and delete the entire file.
+Then bring it back. And do it again. Be a god.
+
+---------------
+MODIFICATION RECAP
+
+	a - append to the end of the word that the cursor is on, enter insert mode
+	A - append to the end of a line, entering insert mode
+	I - Insert at the front of a line (after blank spaces) entering insert
+	o - Begin a new line below the cursor, enter insert mode
+	O - Begin a new line above the cursor, enter insert mode
+	x - delete the character under (and with numbers given, after the cursor)	
+	X - delete the character(s) before the cursor
+	d{movement} - delete the character in a movement
+		d$ - Delete from cursor to the end of the line
+		d0 - Delete from cursor to the start of the line
+		dw - Delete the next word
+	dd - delete the current line
+	D - delete from cursor to the end of the line	
+	r{char} - Replace the character under the cursor with the char you give it
+	R       - Insert mode for replacing characters
+	~       - Switch the case of the current character
+	y  - yank text
+	p  - place text
+	yy - yank line
+	dy - yank word
+	v (then your normal movement commands) select lines / letters/ words / etc. 
+ 			- You can do all the nice gestures you've learned in visual mode!
+	<Shift-V> - Select lines
+	<^v>      - Select collumns
+	>> - Shift a line one tab to the right
+	<< - Shift a line one tab to the left
+	u - Undo last action
+	r - Redo last undo
 
 -----------------------------------------------------------------------
 						TRICKY COOL ADVANCED THINGS

@@ -8,3 +8,5 @@
 "set mouse=a
 "set nu "sets line numbers on the side
 "set relativenumber "sets relative line numbers
+"imap jk
+"inoremap <CR> <Esc>
