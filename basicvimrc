@@ -2,6 +2,9 @@
 "set ignorecase "ignore cases for searches
 "set smartcase "have searches be case sensitive when a captital is used
 "set incsearch "jump to searches
+"set hlsearch "highlights your search target
 "set wildignore=*.o,*.obj,*.exe "ignore these files
 "syntax on "allows for syntax highlighting for basic languages
-"
+"set mouse=a
+"set nu "sets line numbers on the side
+"set relativenumber "sets relative line numbers
