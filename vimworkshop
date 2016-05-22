@@ -542,5 +542,46 @@ EXERCISE
 
 Stylize your vim buffers! Make two tabs with different views!
 
+---------------
+TMUX
+
+Tmux is similar to making new tabs or windows, except instead of having new 
+terminals, you are using the same terminal window with multiple sessions.
+
+If this sounds strange, thats reasonable. Its much better to just try it out
+
+You can do this by hitting :!tmux, it will open up a new session which will
+be completely seperate than this one. So don't freak out when you cant get 
+to your work. Come back here once you have done that.
+
+Now you are in a tmux session and you can do some weird stuff.
+
+	^b c (cntrl b then hit c, not holdin cntrl) will create a new window
+
+A new window in tmux is like having a new tab in your terminal, and you can
+see your current window at the bottom of the terminal, which number has
+and * next to it.
+
+	^b 1..9 - Swap to the window of the number that you give.
+	^b p    - Swap to the previous window
+	^b n    - Swap to the next window
+	^b w    - Choose a window from a list
+	^b &    - Kill the current window
+
+Try creating a new window and swapping to it, and then back
+
+You can also split up your current window into panes, especially useful
+if you like to have multiple terminals up at once to look at.
+
+	^b "    - Create a new horizontal pane
+	^b %    - Create a new vertical pane
+	^b (up-arrow) - Go up a pane
+	^b (down-arrow) - Go down a pane
+	^b (left-arrow) - Go left a pane
+	^b (right-arrow) - Guess
+	^b x    - Kill the current pane
+		    ***You have to hit y to confirm
+
+Try making an excessive amount of weird panes, just for fun
 
 
