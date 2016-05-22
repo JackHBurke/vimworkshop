@@ -536,9 +536,6 @@ Specialty Registers
 
 	+ - System clipboard (Super useful when copying /pasting to clipboard)
 	_ - The BLACKHOLE, register just sends whatever to oblivion.
-
----------------
-EXERCISE
 	
 You have two things, and want to copy both and paste them in 
 other places in that order! 
