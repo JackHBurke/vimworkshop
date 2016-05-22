@@ -1,3 +1,54 @@
+---------------
+MODIFYING TEXT
+
+---------------
+COPYING AND PASTING
+
+What's that even mean? I only know the words:
+
+y  - yank text
+p  - place text
+yy - yank line
+dy - yank word
+
+---------------
+You know you can chain motions, right? Try that with yank (It's similar to chaining motions with d!)
+
+Here is a sentence that you can mess around with
+
+
+---------------
+VISUAL MODE
+
+v (then your normal movement commands) select lines / letters/ words / etc. 
+ - You can do all the nice gestures you've learned in visual mode!
+<Shift-V> Select lines
+<c-v> Block selection
+
+---------------
+EXERCISES
+
+- Use line select on this thing:
+
+    Here is a block of text this is a block of text
+    you should play with this block of text
+    by selecting things
+
+- Select all the 1's and only the ones!
+    000000000000000
+    000001111100000
+    000001111100000
+    000001111100000
+    000001111100000
+    000000000000000
+
+See what happens when
+you paste
+all the ones 
+at the beginning of this
+block of text
+
+
 ----------------
 TRICKY COOL ADVANCED THINGS
 
@@ -20,9 +71,11 @@ This isn't an ordinary text editor though, you've got /registers/, man.
 
 Copy this line into a register
 Copy this line into another register
+
 (Now paste them around)
 
 What's in your system clipboard right now? Let's find out! (paste it below and share with your friends)
+
 
 ...What other sick things can I do with registers though?
 
@@ -35,7 +88,7 @@ but wait, let's first learn how to increment/decrement a number
 INCREMENTING AND DECREMENTING
 
 <C-x> decrements
-<C-a> Increments (Note: If you are using tmux and you have a bound like a smart person
+<C-a> Increments (Note: If you are using tmux and you have 'a' bound like a smart person
                   Than unfortunately you'll have to hit a twice.)
 
 ----------------
