@@ -180,6 +180,11 @@ Delete Delete each other other word however however you want want
 
 ----------------
 
+Larger jumps can be made by jumping to basic delimeters in a text based
+file. '('s move by looking for periods, and '{'s move based on blank lines.
+In a typical programming file, these characters aren't common, so you can
+decide how helpful they are to you.
+
 	( - move a sentance backward (based on periods)
 	) - move a sentace forward
 	{ - move a paragraph backward (based on empty lines)
@@ -189,6 +194,10 @@ Delete Delete each other other word however however you want want
 	((((( move ) between ) each ) paren) here)
 
 ----------------
+
+Moving to the end or start of a line however can be incredibly useful in
+programming. A main use for this would be adding tabs to the start of a line
+or semicolans to the end
 
     0 - move to the start of a line
 	_ or ^ - move to the first non blank character of a line
@@ -201,6 +210,10 @@ Delete Delete each other other word however however you want want
 	TThen delete the extra spaces in front of these sentances..
 
 ----------------
+
+In line searches for characters can be much quicker for traversing a line
+than going word by word if you know what you are looking for. It is especially
+helpful when going to a special character.
 
 	f{char} - find the next occurence of the character given, cursor on char
 	F{char} - find the previous occurence of the character given, cursor on char
@@ -243,6 +256,9 @@ Find the word that comes after the 3rd word line in this document:
 Find the last line where the end of the line is commands:
 
 ----------------
+
+When jumping around your document quickly, or bouncing between a few spots 
+in your document, it can be helpful to go to previous searches.
 
 	^o - Go to previous line that you have been to
 	^i - Go to the next line that you have been to
@@ -317,10 +333,10 @@ COPYING AND PASTING
 
 What's that even mean? I only know the words:
 
-y  - yank text
-p  - place text
-yy - yank line
-dy - yank word
+	y  - yank text
+	p  - place text
+	yy - yank line
+	dy - yank word
 
 ---------------
 You know you can chain motions, right? Try that with yank (It's similar to chaining motions with d!)
@@ -331,10 +347,10 @@ Here is a sentence that you can mess around with
 ---------------
 VISUAL MODE
 
-v (then your normal movement commands) select lines / letters/ words / etc. 
- - You can do all the nice gestures you've learned in visual mode!
-<Shift-V> Select lines
-<c-v> Block selection
+	v (then your normal movement commands) select lines / letters/ words / etc. 
+ 			- You can do all the nice gestures you've learned in visual mode!
+	<Shift-V> - Select lines
+	<^v>      - Select collumns
 
 ---------------
 EXERCISE
@@ -359,9 +375,32 @@ all the ones
 at the beginning of this
 block of text
 
+----------------
+TABBING
+
+One useful application for visual mode is being able to tab / untab multiple
+lines. This is done with >> or << for tabbing or untabbing respectively
+
+	>> - Shift a line one tab to the right
+	<< - Shift a line one tab to the left
+
+Tab this line
+		Untab these two lines
+		but use visual mode to select both
 
 -----------------------------------------------------------------------
 						TRICKY COOL ADVANCED THINGS
+
+----------------
+BASH COMMANDS
+
+If you want to stay in vim, and still run basic commands where you would 
+just exit out of vim to run one basic command then go back into your file,
+you can use !. This is especially useful for running make's.
+
+	:!{command} - Runs a unix command while in vim
+
+Try to call the pwd command while in vim
 
 ----------------
 SUBSTITUTION
@@ -380,18 +419,22 @@ Change all occurences of line to spline
 ----------------
 REGISTERS
     
-    Hit "<letter>yy to yank line to register <letter> (You can also use y, or select blocks of text, etc...)
+    Hit "<letter>yy to yank line to register <letter> 
+				(You can also use y, or select blocks of text, etc...)
     Hit "<letter>p to yank to register <letter>
 
 ----------------
 Specialty Registers
-+ - System clipboard (Super useful when copying /pasting to clipboard)
-_ - The BLACKHOLE, register just sends whatever to oblivion.
+
+	+ - System clipboard (Super useful when copying /pasting to clipboard)
+	_ - The BLACKHOLE, register just sends whatever to oblivion.
 
 
 ---------------
 EXERCISE
-You have two things, and want to copy both and paste them in other places in that order! 
+	
+You have two things, and want to copy both and paste them in 
+other places in that order! 
 This isn't an ordinary text editor though, you've got /registers/, man.
 
 Copy this line into a register
@@ -444,6 +487,7 @@ This is line number 1!
 
 WINDOWS AND BUFFERS
 ----------------
+
 You'll inevitably end up opening multiple buffers in vim, so it'd probably be useful to be able to
 browse  between them, huh?
 
@@ -454,8 +498,8 @@ To switch between buffers type :b<number of buffer>
 ----------------
 EXERCISE
 
-1) Open a new buffer
-2) :ls to see your new buffer
+	1) Open a new buffer
+	2) :ls to see your new buffer
 
 ---------------
 WINDOWS
@@ -465,14 +509,19 @@ Buffers are only sort of useful if you can't view things side-by-side
 Luckily, vim allows you to open seperate windows to your buffers!
 
 NOTE: These require a magic touch. With one finger on control hit w, release control then hit the next key
-<C-w-v> or :vsplit opens a new vertical split
-<C-w-s> or :hsplit or :split Opens up a new horizontal split
-<C-w-c> Closes a split
-<C-w-|> Maximizes a split horizontally (Note that it looks like a bar! Which is a way of remember it sorta I guess)
-<C-w-_> Maximizes a split vertically (Same dumb way of remembering it as above)
-<C-w-=> Makes all your splits equal in size
-<C-w-h>, <C-w-j>, <C-w-k>, <C-w-l> Move between windows, just like hjkl move within a buffer
-<C-w-H>, <C-w-J>, <C-w-K>,<C-w-L> Move the windows around in the direction you hit (Note that HJKL are caps'd)
+
+	<C-w-v> or :vsplit opens a new vertical split
+	<C-w-s> or :hsplit or :split Opens up a new horizontal split
+	<C-w-c> Closes a split
+	<C-w-|> Maximizes a split horizontally (Note that it looks like 
+				a bar! Which is a way of remember it sorta I guess)
+	<C-w-_> Maximizes a split vertically (Same dumb way of remembering 
+				it as above)
+	<C-w-=> Makes all your splits equal in size
+	<C-w-h>, <C-w-j>, <C-w-k>, <C-w-l> Move between windows, just 
+				like hjkl move within a buffer
+	<C-w-H>, <C-w-J>, <C-w-K>,<C-w-L> Move the windows around in the
+				direction you hit (Note that HJKL are caps'd)
 
 ---------------
 EXERCISE
