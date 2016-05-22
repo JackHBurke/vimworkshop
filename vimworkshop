@@ -1,0 +1,228 @@
+-------------------------------------------------------------------
+					WELCOME TO THIS VIM WORKSHOP
+-------------------------------------------------------------------
+
+Vim is great, look at how shiny and pretty this is!
+
+This workshop is geared towards people who have a small ammount of 
+exprience with vim, but will be accessible to those with no experience
+
+If you have not used vim before, spend some time with the next couple of lessons
+
+If you have used vim, skip to the next section to follow along
+	* Move down there by holding j, hitting ^d, or hitting /COUNTS 
+
+If you are a vim guru, and are using this time to shame me, search through
+the file as you see fit to see if this will be any help for you.
+
+-------------------------------------------------------------------
+						THE BASICS
+
+If this experience is scary for you, hit <ESC> a bunch, then hit :q!
+Ensure that you are in normal mode by hitting escape
+
+		^				Movement in vim is done with h, j, k, and l
+		k				
+< h           l >		h moves left, j moves down, k move up, and l right. 
+		j				Keep your hands at your normal spot on the home row,
+		v				this allows you to move around vim without moving your
+						hands much.
+------------------
+DELETION
+
+Character deletion in vim is done by hitting 
+	x to delete the character under the cursor
+
+Tryyy this byy movvving tthrough thiiis sentannce to fiix thhe erroors.
+
+------------------
+INSERTION
+
+Insertion is done by being in insert mode, which you enter by hitting 
+	- i to insert text (insert)
+You exit insert mode by hitting <ESC>
+
+Try to fx ths sentnce by ading txt to it.
+
+***If this seems slow to you, it should, you will learn quicker ways to do this
+****Literally the point of this workshop
+
+------------------
+SAVING AND EXITING
+
+To save your work in vim, be in normal mode, then 
+	hit : to begin typing a command at the bottom of your screen. Then 
+	hit w and enter 
+		:w
+
+To exit vim, do the command 
+	:q
+
+Try saving this file with the changes that you have made, then quiting
+and reopening the file.
+
+You can combine these commands to write and quit by doing
+	:wq
+
+***Alternatively you can type ZZ while in normal mode
+
+:q! will exit without saving
+
+------------------
+BASICS RECAP
+
+	x - Delete the character under the cursor
+	
+	i - Enter into insert mode, press <ESC> to exit it
+	
+	:w - Saves the files
+	
+	:q - Exits the file (if no changes were made since saving)
+	
+	:wq - Saves and exits the file
+	
+	ZZ - Saves and exits the file
+
+	:q! - Exits the file without saving
+
+------------------
+
+And this ends the basic information you need (somewhat)
+
+Now we begin with a concept that will come up in the next chapters;
+Using a number to preform an action that many times
+
+--------------------------------------------------------------------
+							COUNTS
+
+Most every action in vim can be done multipe times by entering a number before
+the action. This becomes incredibly useful for repetitive tasks.
+
+Look at the line number of this line. Type in this number then hit k to go
+to the top of the document. Hit the same number then j to come back down.
+**** 95k, 95j
+
+This can be applied to deletion too, as 5x will delete 5 characters after the 
+cursor.
+
+Delete this line word by word using x.
+
+***You will need 1 extra for the spaces
+
+--------------------------------------------------------------------
+							MOVEMENT
+
+There are many different ways to get around in vim, moving large and small
+distances, relative and absolute distances, and moving to specific places.
+
+------------------
+LARGE MOVEMENT
+
+The biggest move you can make, would be to move from the top of a file, to
+the bottom, so lets start there.
+
+	gg - puts you at the top of a file, 
+	G - puts you at the bottom
+
+***BEFORE YOU TEST THIS***
+***<-- look at this line number and type :(put line number jack) to get back
+Now go to the top, bottom, and come back
+
+In order to traverse a document based on large jumps, 
+	hit ^f to go forward a page (^forward)
+	or  ^b to go backwards a page (^backward)
+
+In less large jumps,
+	hit ^u to go up a half page (^up)
+	or ^d to go down a half page (^down)
+
+Mess around with this, it can allow you to look at the future chapters in
+this document
+
+-----------------
+ABSOLUTE MOVEMENT
+
+In vim, if you know the line number, (or generally the line number that
+you want to get to) you can travel to that line
+
+***if for some reason you dont have line numbers, enter 
+	:set nu - to set the line numbers for the file
+
+	:number - Will put your cursor onto the the line "number"
+
+Remember any of the line numbers around this section, then try this 
+absolute movement to move to different areas.
+
+Enter in the first word on line 300: 
+Enter in the last word on line 50:
+
+-----------------
+SMALL MOVEMENT
+
+Most all of your important movement in vim is small movements on a line, or 
+around a line. While you can use hjkl to move around, generally there is a 
+more effecient way. 
+
+	w - move to the start of the next word (word)
+	e - move to the end of the word (end)
+	b - move backwards to the start of the word (back)
+	ge - move backwards to the end of the word (go back end?)
+
+DDelete tthe ffirst ccharacter oof eeach wword iin tthis ssentance
+
+Deletee thee lastt characterr off eachh wordd inn thiss sentancee
+
+***Remember how we used count before commands
+
+DDelete the ffirst character oof each oother word
+
+Delete Delete each other other word however however you want want
+
+----------------
+
+	( - move a sentance backward (based on periods)
+	) - move a sentace forward
+	{ - move a paragraph backward (based on empty lines)
+	} - move a paragraph forward
+	% - Find the matching bracket / paren
+
+	((((( move ) between ) each ) paren) here)
+
+----------------
+
+    0 - move to the start of a line
+	_ or ^ - move to the first non blank character of a line
+    $ - move to the end of the line
+
+    DDelete the extra period on all of these sentances..
+
+    TThen delete the first character on each of these sentances..
+
+	TThen delete the extra spaces in front of these sentances..
+
+----------------
+
+	f{char} - find the next occurence of the character given, cursor on char
+	F{char} - find the previous occurence of the character given, cursor on char
+	t{char} - find the next occurence, cursor to the left of the char 
+	T{char} - find the previous occurence, cursor to the right of the char
+	;       - repeat to find the next character for these commands
+
+Fix the parens on ((x + 2))
+
+Remove .the .third. period. in. this. sentance. 
+*** you can also apply the count idea to these commands
+
+Every time you find a i, add a semicolon before it.
+
+----------------
+SEARCHING
+
+I dont need to tell you how important being able to search a document is, 
+but a nice aspect of vim is that you can utilize regular expressions to 
+create more specific searches
+
+	/{pattern} - Search forward from the cursor
+	?{pattern} - Search backwards from the cursor
+	/^{pattern} - Search forward for things beggining with pattern
+	/{pattern}$ - Search forward 

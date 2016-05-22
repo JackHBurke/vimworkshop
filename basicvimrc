@@ -1,0 +1,7 @@
+"nnoremap <CR> :noh<CR><CR> "remove highlighting from searches after enter
+"set ignorecase "ignore cases for searches
+"set smartcase "have searches be case sensitive when a captital is used
+"set incsearch "jump to searches
+"set wildignore=*.o,*.obj,*.exe "ignore these files
+"syntax on "allows for syntax highlighting for basic languages
+"
