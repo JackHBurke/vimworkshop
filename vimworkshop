@@ -31,7 +31,7 @@ Ensure that you are in normal mode by hitting escape
 DELETION
 
 Character deletion in vim is done by hitting 
-	x to delete the character under the cursor
+	x - to delete the character under the cursor
 
 Tryyy this byy movvving tthrough thiiis sentannce to fiix thhe erroors.
 
@@ -39,7 +39,8 @@ Tryyy this byy movvving tthrough thiiis sentannce to fiix thhe erroors.
 INSERTION
 
 Insertion is done by being in insert mode, which you enter by hitting 
-	- i to insert text (insert)
+	i - to insert text (insert)
+
 You exit insert mode by hitting <ESC>
 
 Try to fx ths sentnce by ading txt to it.
@@ -156,14 +157,14 @@ you want to get to) you can travel to that line
 Remember any of the line numbers around this section, then try this 
 absolute movement to move to different areas.
 
-Enter in the first word on line 300: 
-Enter in the last word on line 50:
+Enter in the first word on line 201: 
+Enter in the last word on line 62:
 
 -----------------
 SMALL MOVEMENT
 
-Most all of your important movement in vim is small movements on a line, or 
-around a line. While you can use hjkl to move around, generally there is a 
+Most movements in vim are small movements on a line, or around a line.
+While you can use hjkl to move around, generally there is a 
 more effecient way. 
 
 	w - move to the start of the next word (word)
@@ -198,9 +199,9 @@ decide how helpful they are to you.
 
 ----------------
 
-Moving to the end or start of a line however can be incredibly useful in
+Moving to the end or start of a line can be incredibly useful in
 programming. A main use for this would be adding tabs to the start of a line
-or semicolans to the end
+or semicolons to the end.
 
     0 - move to the start of a line
 	_ or ^ - move to the first non blank character of a line
@@ -214,27 +215,27 @@ or semicolans to the end
 
 ----------------
 
-In line searches for characters can be much quicker for traversing a line
+In-line searches for characters can be much quicker for traversing a line
 than going word by word if you know what you are looking for. It is especially
 helpful when going to a special character.
 
-	f{char} - find the next occurence of the character given, cursor on char
-	F{char} - find the previous occurence of the character given, cursor on char
-	t{char} - find the next occurence, cursor to the left of the char 
-	T{char} - find the previous occurence, cursor to the right of the char
+	f{char} - find the next occurence of the character given
+	F{char} - find the previous occurence of the character given
+	t{char} - find the next occurence, put the cursor to the left of the char 
+	T{char} - find the previous occurence, put the cursor to the right 
 	;       - repeat to find the next character for these commands
 
-Fix the parens on ((x + 2))
+Remove the parens on ((x + 2))
 
-Remove .the .third. period. in. this. sentance. 
-*** you can also apply the count idea to these commands
+Remove .the .third. period. in. this. sentence. 
+*** you can also apply the count idea to these commands ***
 
 Every time you find a i, add a semicolon before it.
 
 ----------------
 SEARCHING
 
-I dont need to tell you how important being able to search a document is, 
+I dont need to tell you how important searching a document is, 
 but a nice aspect of vim is that you can utilize regular expressions to 
 create more specific searches
 
@@ -251,17 +252,17 @@ create more specific searches
 	n           - go to next element found by pattern
 	N			- go to previous element found by pattern
 
-Find the line number of the last time I typed move in this document:
+Find the line number of the last time I typed "move" in this document:
 
-Find the word that comes after the 3rd word line in this document:
+Find the word that comes after the 3rd word "line" in this document:
 ***gg puts you at the top of a file
 
-Find the last line where the end of the line is commands:
+Find the last line where the end of the line reads "commands":
 
 ----------------
 
 When jumping around your document quickly, or bouncing between a few spots 
-in your document, it can be helpful to go to previous searches.
+in your document, it can be helpful to go to your previous searches.
 
 	^o - Go to previous line that you have been to
 	^i - Go to the next line that you have been to
@@ -320,8 +321,8 @@ MOVEMENT RECAP
 --------------------------------------------------------------------------
 								MODIFICATION
 
-As you have probably found out by now, inserting text with just i sucks.
-Here you will find easier ways to enter into insert mode to add text.
+As you have found out by now, inserting text with just i can be inefficient.
+Here you will learn other ways to add or change text.
 
 ----------------
 INSERTS
@@ -356,10 +357,10 @@ Delete everything after <here> because this text isnt really all that good
 Delete everthing before <here> because it sucked too
 Delete just this line
 Just delete these next 4 lines
-remember
-using numbers
-before using
-commands
+***remember
+***using numbers
+***before using
+***commands
 
 delete 5 characters before and after <here> remembering numbers as well 
 
@@ -383,12 +384,13 @@ COPYING AND PASTING
 
 What's that even mean? I only know the words:
 
-	y  - yank text
-	p  - place text
-	yy - yank line
-	dy - yank word
+	y  - Copy (yank) text to temporarily store
+	p  - Place text after the cursor
+	P  - Place text before the cursor
+	yy - Yank line
+	yw - Yank word
 
-Try chainin motions with yank (It's similar to chaining motions with d!)
+Try chaining motions with yank 
 
 Here is a sentence that you can mess around with
 
@@ -404,15 +406,15 @@ visual mode, to where you put your cursor, similar to dragging your mouse.
 	v (then your normal movement commands) select lines / letters/ words / etc. 
  			- You can do all the nice gestures you've learned in visual mode!
 	<Shift-V> - Select lines
-	<^v>      - Select collumns
+	<^v>      - Select columns
 
-- Use line select on this thing:
+Use line select on this thing:
 
     Here is a block of text this is a block of text
     you should play with this block of text
     by selecting things
 
-- Select all the 1's and only the ones!
+Select all the 1's and only the ones!
     000000000000000
     000001111100000
     000001111100000
@@ -421,8 +423,7 @@ visual mode, to where you put your cursor, similar to dragging your mouse.
     000000000000000
 
 See what happens when
-you paste
-all the ones 
+you paste all the ones 
 at the beginning of this
 block of text
 
@@ -434,6 +435,8 @@ lines. This is done with >> or << for tabbing or untabbing respectively
 
 	>> - Shift a line one tab to the right
 	<< - Shift a line one tab to the left
+	(Visual mode) > - Shifts the selected area to the right one tab
+	(Visual mode) < - Shifts the selected area to the left one tab
 
 Tab this line
 		Untab these two lines
@@ -441,8 +444,6 @@ Tab this line
 
 ---------------
 REDO
-
-While you probably have figured out how to undo, redo can be equally as helpful
 
 	u - Undo last action
 	^r - Redo last undo
@@ -499,7 +500,7 @@ BASH COMMANDS
 
 If you want to stay in vim, and still run basic commands where you would 
 just exit out of vim to run one basic command then go back into your file,
-you can use !. This is especially useful for running make's.
+you can use ! This is especially useful for running make's.
 
 	:!{command} - Runs a unix command while in vim
 
@@ -527,9 +528,11 @@ letters, you can have multiple registers that you are utilizing at once.
 Saving to registers is especially useful for saving and pasting from 
 your clipboard.
 
-    "<letter>yy to yank line to register <letter> 
+    "<char>yy to yank line to register <letter> 
 				(You can also use y, or select blocks of text, etc...)
-    "<letter>p to yank to register <letter>
+    "<char>p to yank to register <letter>
+
+	***its (quote, character of register to copy to, then yy or p)***
 
 ----------------
 Specialty Registers
@@ -546,7 +549,8 @@ Copy this line into another register
 
 (Now paste them around)
 
-What's in your system clipboard right now? Let's find out! (paste it below and share with your friends)
+What's in your system clipboard right now? Let's find out! 
+(paste it below and share with your friends)
 
 ---------------
 MACROS
@@ -557,8 +561,9 @@ but wait, let's first learn how to increment/decrement a number
 INCREMENTING AND DECREMENTING
 
 <C-x> decrements
-<C-a> Increments (Note: If you are using tmux and you have 'a' bound like a smart person
-                  Than unfortunately you'll have to hit a twice.)
+<C-a> Increments (Note: If you are using tmux and 
+						you have 'a' bound like a smart person
+                  		Than unfortunately you'll have to hit a twice.)
 
 Increment this number: 0
 
@@ -566,12 +571,13 @@ Increment this number: 0
 BACK TO RECORDINGS
 
 Saving a Recording
-If you hit <q><register> followed by a sequence of keys then <q> once more to end the recording, all your
-actions will be saved to <register>
+If you hit <q><register> followed by a sequence of keys then <q> once more 
+to end the recording, all your actions will be saved to <register>
 
 PLAYING BACK A RECORDING
-hit @<register> 
-(NOTE: You can repeat this macro, for instance, 50 times by hitting 50@<register>)
+	hit @<register> 
+(NOTE: You can repeat this macro, for instance, 
+		50 times by hitting 50@<register>)
 
 	q<number> - begin recording commands into register <number>
 				hit q again to finish
@@ -584,31 +590,15 @@ Record a macro which:
 
 This is line number 1!
 
-WINDOWS AND BUFFERS
-----------------
-
-You'll inevitably end up opening multiple buffers in vim, so it'd probably be useful to be able to
-browse  between them, huh?
-
-To open up a new buffer type :bn
-To see your list of current buffers type :ls (NOTE: You can find a plugin which makes this functionality nicer..)
-To switch between buffers type :b<number of buffer>
-
-	:bn - Open a new buffer
-	:ls - View all curent buffer
-	:b<number> - Switch to buffer <number>
-
-Open a new buffer
-:ls to see your new buffer
-
 ---------------
 WINDOWS
 
-Buffers are only sort of useful if you can't view things side-by-side 
-(or up-and-down, or tiled as many times as you like)
-Luckily, vim allows you to open seperate windows to your buffers!
+Windows in vim are used to split up your current vim process horizontally
+or vertically. They begin on your current file and allow you to quickly
+switch between editing multiple sections of a file, or editing multiple files.
 
-NOTE: These require a magic touch. With one finger on control hit w, release control then hit the next key
+***	NOTE: These require a magic touch.
+	With one finger on control hit w, release control then hit the next key
 
 	<C-w-v> or :vsplit opens a new vertical split
 	<C-w-s> or :hsplit or :split Opens up a new horizontal split
@@ -623,18 +613,21 @@ NOTE: These require a magic touch. With one finger on control hit w, release con
 	<C-w-H>, <C-w-J>, <C-w-K>,<C-w-L> Move the windows around in the
 				direction you hit (Note that HJKL are caps'd)
 
-Make some windows! Use those buffers you made and place them around in nice ways. Open up a couple new files or
-whatnot. Tile it up dude!
+Make some windows! Use those buffers you made and place them 
+around in nice ways. 
 
-"Yeah, but what if I want a different way of viewing all my buffers?"A
+Open up a couple new files.
 
 ---------------
 TABS
 
+Tabs are useful if you do not want to split your current window, but want to
+have easily accesible sessions of vim open at once.
+
 	:tabnew - Create a new tab
 	gt and gT - Move back and forth between tabs
 
-Stylize your vim buffers! Make two tabs with different views!
+Create a couple of tabs, and try switching between them
 
 ---------------
 TMUX
@@ -677,5 +670,10 @@ if you like to have multiple terminals up at once to look at.
 		    ***You have to hit y to confirm
 
 Try making an excessive amount of weird panes, just for fun
+
+--------------------------------------------------------------
+						THE END
+
+	Thank you for going through my workshop!
 
 

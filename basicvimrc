@@ -1,12 +1,30 @@
-"nnoremap <CR> :noh<CR><CR> "remove highlighting from searches after enter
-"set ignorecase "ignore cases for searches
-"set smartcase "have searches be case sensitive when a captital is used
-"set incsearch "jump to searches
-"set hlsearch "highlights your search target
-"set wildignore=*.o,*.obj,*.exe "ignore these files
-"syntax on "allows for syntax highlighting for basic languages
-"set mouse=a
-"set nu "sets line numbers on the side
-"set relativenumber "sets relative line numbers
-"imap jk
-"inoremap <CR> <Esc>
+"To begin, type out this line
+"git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"then use the command cp basicvimrc ~/.vimrc
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+"To install these plugins, hit :PluginInstall
+Plugin 'scrooloose/nerdtree.git' "Very useful plugin for displaying directories
+								" In vim
+Plugin 'ervandew/supertab' "Tab completion
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nnoremap <CR> :noh<CR><CR> 
+"remove highlighting from searches after enter
+set ignorecase "ignore cases for searches
+set smartcase "have searches be case sensitive when a captital is used
+set incsearch "jump to searches
+set hlsearch "highlights your search target
+set wildignore=*.o,*.obj,*.exe "ignore these files
+syntax on "allows for syntax highlighting for basic languages
+set mouse=a
+set nu "sets line numbers on the side
+set relativenumber "sets relative line numbers
+imap jk <Esc>
+colorscheme desert
+"colorscheme delek
+"colorscheme pablo
