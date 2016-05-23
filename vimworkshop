@@ -507,6 +507,21 @@ you can use ! This is especially useful for running make's.
 Try to call the pwd command while in vim
 
 ----------------
+COMMENTING
+
+Using what we learned about visual mode, and insert, we can easily comment
+out blocks of code.
+
+The general idea is that you go into visual mode to select columns, insert
+a comment character before the line, and then hit escape.
+
+Try to
+comment out these lines
+by using
+whatever kind of comment
+you'd like
+
+----------------
 SUBSTITUTION
 
 Substitution allows you to replace all instances of a word with another
