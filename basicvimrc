@@ -10,9 +10,9 @@ Plugin 'scrooloose/nerdtree.git' "Very useful plugin for displaying directories
 								" In vim
 Plugin 'ervandew/supertab' "Tab completion
 
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd VimEnter * NERDTree "Automatically starts the directory
+autocmd VimEnter * wincmd p "Makes the current vim the focus, not directory
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif       "Closes the directory if vim closes
 nnoremap <CR> :noh<CR><CR> 
 "remove highlighting from searches after enter
 set ignorecase "ignore cases for searches
