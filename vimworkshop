@@ -21,12 +21,12 @@ the file as you see fit to see if this will be any help for you.
 If this experience is scary for you, hit <ESC> a bunch, then hit :q!
 Ensure that you are in normal mode by hitting escape
 
-		^				Movement in vim is done with h, j, k, and l
-		k				
-< h           l >		h moves left, j moves down, k move up, and l right. 
-		j				Keep your hands at your normal spot on the home row,
-		v				this allows you to move around vim without moving your
-						hands much.
+	^				Movement in vim is done with h, j, k, and l
+	k				
+< h    l >		h moves left, j moves down, k move up, and l right. 
+	j			Keep your hands at your normal spot on the home row,
+	v			this allows you to move around vim without moving your
+					hands much.
 ------------------
 DELETION
 
@@ -94,7 +94,7 @@ Now we begin with a concept that will come up in the next chapters;
 Using a number to preform an action that many times
 
 --------------------------------------------------------------------
-							CHAINING
+			 CHAINING
 
 Most every action in vim can be done multipe times by entering a number before
 the action. This becomes incredibly useful for repetitive tasks.
@@ -114,7 +114,7 @@ Delete this line word by word using x.
 ***You will need 1 extra for the spaces
 
 --------------------------------------------------------------------
-							MOVEMENT
+			MOVEMENT
 
 There are many different ways to get around in vim, moving large and small
 distances, relative and absolute distances, and moving to specific places.
@@ -295,9 +295,9 @@ MOVEMENT RECAP
 	} - move a paragraph forward
 	% - Find the matching bracket / paren
 
-    0 - move to the start of a line
+	0 - move to the start of a line
 	_ or ^ - move to the first non blank character of a line
-    $ - move to the end of the line
+	$ - move to the end of the line
 
 	f{char} - find the next occurence of the character given, cursor on char
 	F{char} - find the previous occurence of the character given, cursor on char
@@ -312,14 +312,14 @@ MOVEMENT RECAP
 	/{pattern}$ - Search forward for a pattern at the end of the line 
 	?{pattern}$ - Same but backwards
 	*			- Search for the word that you have highlighted
-		n           - go to next element found by pattern
-		N			- go to previous element found by pattern
+	n           - go to next element found by pattern
+	N			- go to previous element found by pattern
 
 	^o - Go to previous line that you have been to
 	^i - Go to the next line that you have been to
 
 --------------------------------------------------------------------------
-								MODIFICATION
+				MODIFICATION
 
 As you have found out by now, inserting text with just i can be inefficient.
 Here you will learn other ways to add or change text.
@@ -577,8 +577,8 @@ INCREMENTING AND DECREMENTING
 
 <C-x> decrements
 <C-a> Increments (Note: If you are using tmux and 
-						you have 'a' bound like a smart person
-                  		Than unfortunately you'll have to hit a twice.)
+			you have 'a' bound like a smart person
+                  	Than unfortunately you'll have to hit a twice.)
 
 Increment this number: 0
 

@@ -22,6 +22,8 @@ set hlsearch "highlights your search target
 set wildignore=*.o,*.obj,*.exe "ignore these files
 syntax on "allows for syntax highlighting for basic languages
 set mouse=a
+set shiftwidth=4
+set tabstop=4
 set nu "sets line numbers on the side
 set relativenumber "sets relative line numbers
 imap jk <Esc>
