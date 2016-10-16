@@ -4,13 +4,13 @@
 
 Vim is great, look at how shiny and pretty this is!
 
-This workshop is geared towards people who have a small ammount of 
+This workshop is geared towards people who have a small amount of 
 exprience with vim, but will be accessible to those with no experience
 
 If you have not used vim before, spend some time with the next couple of lessons
 
 If you have used vim, skip to the next section to follow along
-	* Move down there by holding j, hitting ^d, or hitting /CHAINING
+	* Move down there by holding j, hitting ^d, or hitting /CHAINING then n
 
 If you are a vim guru, and are using this time to shame me, search through
 the file as you see fit to see if this will be any help for you.
@@ -45,8 +45,8 @@ You exit insert mode by hitting <ESC>
 
 Try to fx ths sentnce by ading txt to it.
 
-***If this seems slow to you, it should, you will learn quicker ways to do this
-****Literally the point of this workshop
+*If this seems slow to you, it should, you will learn quicker ways to do this
+**Literally the point of this workshop
 
 ------------------
 SAVING AND EXITING
@@ -109,7 +109,7 @@ to the top of the document. Hit the same number then j to come back down.
 This can be applied to deletion too, as 5x will delete 5 characters after the 
 cursor.
 
-Delete this line word by word using x.
+Delete this line, word by word using x.
 
 ***You will need 1 extra for the spaces
 
@@ -204,7 +204,7 @@ programming. A main use for this would be adding tabs to the start of a line
 or semicolons to the end.
 
     0 - move to the start of a line
-	_ or ^ - move to the first non blank character of a line
+	_ - move to the first non blank character of a line
     $ - move to the end of the line
 
     DDelete the extra period on all of these sentances..
