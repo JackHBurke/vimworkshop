@@ -543,7 +543,7 @@ letters, you can have multiple registers that you are utilizing at once.
 Saving to registers is especially useful for saving and pasting from 
 your clipboard.
 
-    "<char>yy to yank line to register <letter> 
+    "<char>y to yank line to register <letter> 
 				(You can also use y, or select blocks of text, etc...)
     "<char>p to yank to register <letter>
 
